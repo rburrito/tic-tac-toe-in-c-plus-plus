@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-#include "mainFunctions.cpp"
 
 class Gameboard{
 
@@ -47,6 +46,10 @@ Gameboard::Gameboard(){
 }
 
 
+Gameboard::~Gameboard(){
+    cout<<"Exiting game!\n";
+}
+
 void Gameboard::setGamespace(int row, int column){
 
   if (gamespace[row-1][column-1]=='-'){
@@ -67,7 +70,9 @@ void Gameboard::setGamespace(int row, int column){
 }
 
 void Gameboard::printBoard(){
+  cout << endl;
   for (int i=0; i < 3; i++){
+    cout << "\t";
     for (int j=0; j < 3; j++){
       cout << gamespace[i][j]<<" ";
     }
@@ -77,7 +82,7 @@ void Gameboard::printBoard(){
 }
 
 void Gameboard::calculateWinner(){
-
+  
   // horizontal calculation
   horizontalWin();
 
@@ -152,7 +157,7 @@ void Gameboard::setCurrentPlayer(){
 int Gameboard::enterSpaceNumber(string rowOrColumn){
   bool isValidSpace;
   int spaceNumber;
-  cout << "Player "<< currentPlayer<<", please enter "<< rowOrColumn << " number. \n";
+  cout << "Please enter "<< rowOrColumn << " number.\n";
   cin >> spaceNumber;
 
   isValidSpace = checkValidSpace(spaceNumber);
@@ -244,8 +249,4 @@ char Gameboard::playAgainQuestion(){
   cin >> anotherGame;
   cout << endl;
   return anotherGame;
-}
-
-Gameboard::~Gameboard(){
-    cout<<"Exiting game!\n";
 }
