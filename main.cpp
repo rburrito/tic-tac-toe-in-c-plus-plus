@@ -2,7 +2,7 @@
 
 int main(){
 
-    cout << "Beginning a new game of Tic Tac Toe game!\n\n";
+    cout << "Beginning a new game of Tic Tac Toe!\n\n";
 
     Gameboard firstGame;
 
