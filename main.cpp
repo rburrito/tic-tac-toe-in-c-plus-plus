@@ -1,4 +1,4 @@
-#include "mainClasses.h"
+#include "gameboard.h"
 
 int main(){
 
